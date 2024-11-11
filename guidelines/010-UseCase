@@ -1,0 +1,53 @@
+# Welcome to ShopWise Solutions
+ShopWise Solutions is an innovative and fast-growing e-commerce company based in Austin, Texas, USA. Our online platform hosts a wide range of consumer products, spanning electronics, apparel, home goods, and much more. ShopWise Solutions has built a reputation for exceptional customer experience, streamlined order fulfillment, and a diverse catalog of quality products.
+
+**Problem Description**
+ShopWise Solutions is now expanding into the realm of AI-driven customer service and is in need of a new AI-powered product support assistant for our online store. This assistant will serve as the first line of support for customer inquiries regarding products, orders, returns, and refunds, all by interfacing with our existing e-commerce database.
+
+The assistant should be able to handle customer inquiries related to products and orders. It should be capable of natural language understanding, database integration, personalized responses, multi-turn dialogues, and avoidance of hallucinations. Additionally, it should be able to manage orders and track their status.
+
+**Requirements**
+ShopAssistant AI capabilities:
+- Natural Language Understanding
+- Database Integration
+- Personalized Responses
+- Multi-Turn Dialogues
+- Avoidance of hallucinations
+- Order Management
+
+## Evaluation Guidelines and Example Prompts
+To standardize the evaluation process as much as possible, we'll have a set of evaluation scenarios that all judges will consider when performing individual evaluation of submissions.
+
+**Evaluation Scenarios**
+ 1. **Context Understanding** - Questions that test the model's ability to understand context, not just retrieve information.
+     - 1. Prompt example 1: "I see there are some Sony TVs in your catalog. Can you compare the features and prices between the Sony KD75XF8596BU and other TV models you have?"
+  
+    - 2. Prompt example 2: "Looking at the ratings distribution across different product categories, which category would you recommend for the most reliable purchases based on customer satisfaction?"
+     - 3. Prompt example 3: "I notice you have mobile phones and digital cameras. For someone interested in photography, would you recommend the Sony Xperia XA2 Ultra or the Pentax K-1 camera? Please explain the pros and cons of each for photography."
+     - 4. Prompt example 4: "Based on the stock quantities and prices shown in your inventory, which TV models offer the best value for money while still being readily available?"
+
+1. **Product Comparison** - Questions that test model’s ability to compare prices of at least 2 different products
+    - 5. Prompt example: "What's the difference between Product A and Product B?"
+  
+2. **Alternative Suggestions** - Questions that test model’s ability to suggest or recommend
+products matching a given criteria
+    - 6. Prompt example: "I'm looking for a laptop under $1,000 with at least 16GB RAM."
+1. **Product Availability** - Questions that test the model’s ability to assess correctly the availability of products, as well products that match given criterias
+    - 7. Prompt example: Is Product C available in red?
+1. **Nested Requests** - Questions that test the model’s ability to answer complex nested
+requests, containing 2 or more nested specifications
+    - 8. Prompt example: "Can you recommend a smartphone with a good camera and
+tell me if it's compatible with wireless charging?" 
+1. **Order Status Check:**
+    - 9.  **Prompt example:** "Can you tell me the status of my order with Order ID X?" 
+2. **Tracking and Shipping Information:**
+    - 10. **Prompt Example:** "When is my order with Order ID X expected to be delivered?" 
+1. **Return Eligibility:**
+    - 11. Prompt Example"Is my order with Order ID 54321 eligible for return?" 
+9. **Order History:**
+   - 12.  Prompt Example "Can you list my previous orders? My customer id is X." 
+10. **Shipping Delay Inquiry:**
+    - 13. Prompt Example: "My order with Order ID 24680 seems delayed. Can you provide an update on when it might ship?"
+11. **Order Assistance for Multiple Items:**
+    - 14.  Prompt Example: "I ordered multiple items in Order ID 16180. 
+Can you check ifeach item has shipped?”

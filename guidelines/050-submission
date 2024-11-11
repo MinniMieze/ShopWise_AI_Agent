@@ -1,0 +1,18 @@
+# Submission
+
+Submissions should be made via a simple url/website that can demonstrate the assistants/agent’s capability. That should be accompanied by a corresponding github repository that contains the source code for the project so judges can match the functionalities observed to the code.
+
+**Submission guidelines:**
+
+**1. Showcase Website and GitHub Repository:**
+Participants should deploy their AI-powered customer support assistant on an accessible website that demonstrates the assistant's functionality. This website must be accompanied by a GitHub repository containing the complete implementation. The repository should be publicly accessible and the corresponding github repository should accompany it.
+
+**2. Alternative Submission (if Website isn’t Infeasible):**
+If deployment on a website is not possible due to technical constraints, participants must submit a thoroughly organized GitHub repository as an alternative. This repository should demonstrate the implementation with additional rigor in documentation, code comments, and a clear README that guides users through the features and functionalities of the assistant. Comprehensive instructions for testing the solution locally or on a personal server should be included, along with clear usage examples to showcase the assistant's capabilities.
+In both cases, it is preferred to have:
+- A clear explanation of the tech stack chosen and architecture design.
+- A set of instructions for installation and running the solution.
+- Documentation that explains key features, code structure, and how the solution meets the evaluation criteria.
+  
+However, if the website with the solution works, we will use the github repo only as a reference, while in the context of item 2, these points will be weighted as criteria.
+
