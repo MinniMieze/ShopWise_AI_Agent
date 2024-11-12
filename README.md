@@ -14,6 +14,28 @@ The assistant should be able to handle customer inquiries related to products an
 * Multi-Turn Dialogues
 * Avoidance of hallucinations
 * Order Management
+<br>
 
+### System Context Shopwise Webshop
+```mermaid
+    C4Context
+       Person_Ext(customerA, "Customer", "Person interacting with the AI Customer Support Assistant")
+        
+        Enterprise_Boundary(ShopWise, "ShopWise E-Commerce Webshop") {
+          System(Portal, "Webshop Portal", "Webshop Interface for Customers")
+          
+          System(AI, "AI-Support-Service", "Gets Customer Query to be transformed and executed against the Database")
+        
+          SystemDb(E-DB, "E-Commerce DB", "Stores all Products and Orders incl. Orderhandling status")
+        }
+    Rel(customerA,Portal,"Inputs Query","Natural Language English")
+    UpdateRelStyle(customerA, Portal, $textColor="blue", $offsetX="-40", $offsetY="-50")
 
-[[Component Analyses]]
+    Rel(AI, Portal, "Transforms <br>Query<br> in SQL Result","NLP / ML/AI")
+    UpdateRelStyle(AI, Portal, $textColor="blue", $offsetX="-60", $offsetY="-40")   
+
+    Rel(AI,E-DB,"Gets Data from <br>Database","NoSQL")
+    UpdateRelStyle(AI, E-DB, $textColor="blue", $offsetY="-40", $offsetX="-45")
+
+    UpdateLayoutConfig($c4ShapeInRow="3", $c4BoundaryInRow="1")   
+```
