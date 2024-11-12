@@ -39,3 +39,17 @@ The assistant should be able to handle customer inquiries related to products an
 
     UpdateLayoutConfig($c4ShapeInRow="3", $c4BoundaryInRow="1")   
 ```
+
+### Dataflow on System Context Level
+```mermaid
+    sequenceDiagram
+        actor Customer
+        Customer->>Portal: Type in Question
+        par ShopWise E-Commerce Webshop 
+            Portal->>AI Service: Transform Text in NoSQL
+                AI Service->>E-Comm DB: Execute NoSQL on Database
+                E-Comm DB->>AI Service: Return Query Result
+            AI Service->>Portal: Render Result for page
+        end
+        Portal->>Customer: Send back Answer
+```
