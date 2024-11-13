@@ -1,48 +1,34 @@
-# Architecture
+# Target Architecture
+The architecture presented, focuses only on the Use of the AI assistant for retrieving information on Orders, Order Status and Product Availability in context of the Web Application.
+Out of scope is the Webshop itself, where the orders can be placed.
 
-## Basic Architecture
-
-## Target Architecture
 This section describes the target software architecture described according [C4 Model](https://c4model.com).
-
-
+Please note that all views are documented in C4 model style, although only System Context, Container and dynamic views are presented. The most diagrams use informal notation style. All diagrams are supplied with a key explaining meaning of each shape on the diagram.
 ### System Context
+The system context diagram below depicted key Functionalities and interface to endusers and their dependencies.
+The super simplified model shows 3 core components, which will be described in more detail later on. 
 ```mermaid
     C4Context
-        Person_Ext(cust, "Customer", "Customer of ShopWise Webshop")
-    Enterprise_Boundary(b0, "E-Commerce System") {  
-        System(portal, "Webportal", "interface to ShopWise Webshop")
-        System(AI, "AI Service", "AI for Query interpretation<br>and transformation")
-        System(ren,"Result Render Service")  
-        SystemDb(DB, "E-Commerce Database", "Holds product catalog and all orders")
-        
-    }
-    UpdateElementStyle(AI, $offsetX="-100", $offsetY="-50")
+    Person_Ext(cust, "Customer", "A person who buys<br>products from ShopWise ")
+     Boundary(a0,"e-Commerce Webshop") {  
+        Container(webApp, "Web Application","HTML & Python","Provides Order<br> & Invoice Information")
+        Container(ai, "AI API","Python","RAG AI Function<br>for question Question to<br> Query Transformation")
+        ContainerDb(db, "Database", "MongoDb","Holds product and order data")
+    
+        Rel(ai,db, "Uses")
+        Rel(webApp, ai, "Uses")
+        Rel(cust,webApp,"Uses WebApp for<br> information Retrieval<br> Orders and Invoices")
 
-    Rel(cust,portal,"Inputs Question in Natural language", "HTTPS PUT")
-        UpdateRelStyle(cust, portal, $offsetX="-100", $offsetY="-50")
-
-    Rel(ren,portal, "Updates Page")
-        UpdateRelStyle(AI, ren, $offsetX="-40", $offsetY="0")
-
-    Rel(AI,portal,"Transforms Question<br>to NoSQL", "RAG")
-        UpdateRelStyle(AI, portal, $offsetX="-50", $offsetY="-30")
-
-    Rel(AI,DB,"Executes Query","NoSQL")
-        UpdateRelStyle(AI, DB, $offsetX="-40", $offsetY="-40")
-
-    Rel(AI,ren,"Sends Results")
-        UpdateRelStyle(AI, ren, $offsetX="-40", $offsetY="0")
-
-    UpdateLayoutConfig($c4ShapeInRow="2", $c4BoundaryInRow="1")
+     }  
+        UpdateRelStyle(cust, webApp, $offsetX="-100", $offsetY="-50)
+        UpdateLayoutConfig($c4ShapeInRow="1", $c4BoundaryInRow="10")
 ```
-```mermaid
-    C4Context
+```mermaid 
+    C4Context      
     Boundary(b20, "Key", "Legend") {
         Person_Ext(perExt,,)
         System(app, "Application")
-        SystemDb(db, "NoSQL Database")
+        SystemDb(db1, "NoSQL Database")
     }
-
-    UpdateLayoutConfig($c4ShapeInRow="20", $c4BoundaryInRow="1")
+UpdateLayoutConfig($c4ShapeInRow="6", $c4BoundaryInRow="1")
 ```
