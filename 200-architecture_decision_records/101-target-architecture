@@ -1,0 +1,48 @@
+# Architecture
+
+## Basic Architecture
+
+## Target Architecture
+This section describes the target software architecture described according [C4 Model](https://c4model.com).
+
+
+### System Context
+```mermaid
+    C4Context
+        Person_Ext(cust, "Customer", "Customer of ShopWise Webshop")
+    Enterprise_Boundary(b0, "E-Commerce System") {  
+        System(portal, "Webportal", "interface to ShopWise Webshop")
+        System(AI, "AI Service", "AI for Query interpretation<br>and transformation")
+        System(ren,"Result Render Service")  
+        SystemDb(DB, "E-Commerce Database", "Holds product catalog and all orders")
+        
+    }
+    UpdateElementStyle(AI, $offsetX="-100", $offsetY="-50")
+
+    Rel(cust,portal,"Inputs Question in Natural language", "HTTPS PUT")
+        UpdateRelStyle(cust, portal, $offsetX="-100", $offsetY="-50")
+
+    Rel(ren,portal, "Updates Page")
+        UpdateRelStyle(AI, ren, $offsetX="-40", $offsetY="0")
+
+    Rel(AI,portal,"Transforms Question<br>to NoSQL", "RAG")
+        UpdateRelStyle(AI, portal, $offsetX="-50", $offsetY="-30")
+
+    Rel(AI,DB,"Executes Query","NoSQL")
+        UpdateRelStyle(AI, DB, $offsetX="-40", $offsetY="-40")
+
+    Rel(AI,ren,"Sends Results")
+        UpdateRelStyle(AI, ren, $offsetX="-40", $offsetY="0")
+
+    UpdateLayoutConfig($c4ShapeInRow="2", $c4BoundaryInRow="1")
+```
+```mermaid
+    C4Context
+    Boundary(b20, "Key", "Legend") {
+        Person_Ext(perExt,,)
+        System(app, "Application")
+        SystemDb(db, "NoSQL Database")
+    }
+
+    UpdateLayoutConfig($c4ShapeInRow="20", $c4BoundaryInRow="1")
+```
