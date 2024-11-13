@@ -3,6 +3,8 @@
 - this folder contains the architecture decision records (ADRs) for the project
 - the next few sections describe the format and structure of an ADR
 
+# Target Architecture
+- the Target Architecture and Detailed Architecture can be found [here](ai-katas/200-architecture_decision_records/101-target-architecture.md)
 # Architecture Decision Record
 
 A short text file; 1-2 pages long, one file per decision. Can be in markdown, textile, asciidoc, plaintext, etc.
