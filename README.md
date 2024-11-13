@@ -1,55 +1,38 @@
-# ai-katas 2024
+# O'Reilly Katas - ShopWise Solutions
 
-# Welcome to ShopWise Solutions
-ShopWise Solutions is an innovative and fast-growing e-commerce company based in Austin, Texas, USA. Our online platform hosts a wide range of consumer products, spanning electronics, apparel, home goods, and much more. ShopWise Solutions has built a reputation for exceptional customer experience, streamlined order fulfillment, and a diverse catalog of quality products.
-## Problem Description
-ShopWise Solutions is now expanding into the realm of AI-driven customer service and is in need of a new AI-powered product support assistant for our online store. This assistant will serve as the first line of support for customer inquiries regarding products, orders, returns, and refunds, all by interfacing with our existing e-commerce database.
+## overview
 
-The assistant should be able to handle customer inquiries related to products and orders. It should be capable of natural language understanding, database integration, personalized responses, multi-turn dialogues, and avoidance of hallucinations. Additionally, it should be able to manage orders and track their status.
-## Requirements
-* ShopAssistant AI capabilities:
-* Natural Language Understanding
-* Database Integration
-* Personalized Responses
-* Multi-Turn Dialogues
-* Avoidance of hallucinations
-* Order Management
-<br>
+- this repository contains the solution for the O'Reilly Katas - ShopWise challenge
 
-### System Context Shopwise Webshop
-```mermaid
-    C4Context
-       Person_Ext(customerA, "Customer", "Person interacting with the AI Customer Support Assistant")
-        
-        Enterprise_Boundary(ShopWise, "ShopWise E-Commerce Webshop") {
-          System(Portal, "Webshop Portal", "Webshop Interface for Customers")
-          
-          System(AI, "AI-Support-Service", "Gets Customer Query to be transformed and executed against the Database")
-        
-          SystemDb(E-DB, "E-Commerce DB", "Stores all Products and Orders incl. Orderhandling status")
-        }
-    Rel(customerA,Portal,"Inputs Query","Natural Language English")
-    UpdateRelStyle(customerA, Portal, $textColor="blue", $offsetX="-40", $offsetY="-50")
+## about the challenge
 
-    Rel(AI, Portal, "Transforms <br>Query<br> in SQL Result","NLP / ML/AI")
-    UpdateRelStyle(AI, Portal, $textColor="blue", $offsetX="-60", $offsetY="-40")   
+- **challenge**
+  - The AI Katas challenge is a live online event where teams will leverage the power of LLMs to build an AI agent from scratch and solve a real-world problem
+  - link to challenge: [O'Reilly AI Katas - ShopWise](https://learning.oreilly.com/live-events/ai-katas/0642572012342/)
+- **purpose**
+  - showcase and enhance skills in a collaborative, interactive environment
+  - gain insights from industry experts and peers
+  - opportunities for feedback and voting on finalists' solutions
+- **event calender**
+  - `event 1: kickoff - november 11`
+    - overview of AI Katas challenge
+    - problem briefing for AI agent
+  - `event 2: judges Q&A session - november 18`
+    - ask the judges any questions you have about the problem
+    - fine-tune your solution and prepare your final presentation
+  - `event 3: finals - december 4`
+    - top teams present their solutions
+    - judges provide feedback
+    - attendees vote for their favorite
+    - judges announce the winner
+- **intended audience**
+  - this event is for you if
+    - you have at least three years of technical experience
+    - looking to get more hands-on with generative AI
 
-    Rel(AI,E-DB,"Gets Data from <br>Database","NoSQL")
-    UpdateRelStyle(AI, E-DB, $textColor="blue", $offsetY="-40", $offsetX="-45")
+## repository structure
 
-    UpdateLayoutConfig($c4ShapeInRow="3", $c4BoundaryInRow="1")   
-```
-
-### Dataflow on System Context Level
-```mermaid
-    sequenceDiagram
-        actor Customer
-        Customer->>Portal: Type in Question
-        par ShopWise E-Commerce Webshop 
-            Portal->>AI Service: Transform Text in NoSQL
-                AI Service->>E-Comm DB: Execute NoSQL on Database
-                E-Comm DB->>AI Service: Return Query Result
-            AI Service->>Portal: Render Result for page
-        end
-        Portal->>Customer: Send back Answer
-```
+- the repository is organized into the following folders
+  - `100-requirements`: contains the requirements and dataset information
+  - `200-architecture_decision_records`: contains the architecture decision records (ADRs) for the project
+  - `300-code`: contains the code implementation for the project
