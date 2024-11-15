@@ -8,30 +8,8 @@ Please note that all views are documented in C4 model style, although only Syste
 The system context diagram below depicted key Functionalities and interface to endusers and their dependencies.
 The super simplified model shows 3 core components, which will be described in more detail later on. 
 
+As part of the WebA pplication a Customer Authentication Service is embedded for Authorization of Customer Data Retrieval, which will be not further be detailed out for this AI-Kata.
+We Assume it is there inplace and can be used in our parameters for our database queries: See [ADR-1](/200-architecture_decision_records/adr-1.md)
+
 ![System Context](/800-assets/C1.jpg "System Context")
 
-```mermaid
-    C4Context
-    Person_Ext(cust, "Customer", "A person who buys<br>products from ShopWise ")
-     Boundary(a0,"e-Commerce Webshop") {  
-        Container(webApp, "Web Application","HTML & Python","Provides Order<br> & Invoice Information")
-        Container(ai, "AI API","Python","RAG AI Function<br>for question Question to<br> Query Transformation")
-        ContainerDb(db, "Database", "MongoDb","Holds product and order data")
-    
-        Rel(ai,db, "Uses")
-        Rel(webApp, ai, "Uses")
-        Rel(cust,webApp,"Uses WebApp for<br> information Retrieval<br> Orders and Invoices")
-
-     }  
-        UpdateRelStyle(cust, webApp, $offsetX="-100", $offsetY="-50)
-        UpdateLayoutConfig($c4ShapeInRow="1", $c4BoundaryInRow="10")
-```
-```mermaid 
-    C4Context      
-    Boundary(b20, "Key", "Legend") {
-        Person_Ext(perExt,,)
-        System(app, "Application")
-        SystemDb(db1, "NoSQL Database")
-    }
-UpdateLayoutConfig($c4ShapeInRow="6", $c4BoundaryInRow="1")
-```
