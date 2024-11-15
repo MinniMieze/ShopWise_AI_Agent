@@ -7,6 +7,9 @@ Please note that all views are documented in C4 model style, although only Syste
 ### System Context
 The system context diagram below depicted key Functionalities and interface to endusers and their dependencies.
 The super simplified model shows 3 core components, which will be described in more detail later on. 
+
+![System Context](/800-assets/C1.jpg "System Context")
+
 ```mermaid
     C4Context
     Person_Ext(cust, "Customer", "A person who buys<br>products from ShopWise ")
