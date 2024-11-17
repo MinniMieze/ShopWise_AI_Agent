@@ -1,0 +1,11 @@
+Product ID,ProductName,Category, Category ID,OrderID,CustomerID,OrderStatus,ReturnEligible,ShippingDate
+43860,bosch serie 4 kil22vf30g integrated fridge,Fridges,2623,1927,1210,Shipped,FALSE,2024-10-25 12:24:37.765490
+10748,sony kd75xf8596bu 75 4k hdr ultra hd smart android led tv amazon alexa,TVs,2614,3469,898,Delivered,FALSE,2024-09-29 12:24:37.765490
+429,sony xperia xa2 ultra black 6 32gb 4g unlocked sim free,Mobile Phones,2612,3180,260,Cancelled,FALSE,2024-10-14 12:24:37.765490
+23568,pentax k 1 body hd 24 70mm f/2 8 ed sdm wr,Digital Cameras,2617,1502,11,Shipped,FALSE,2024-10-18 12:24:37.765490
+12520,samsung ue75mu7000txxu 75 inch 7 series led smart tv black/silver,TVs,2614,2213,338,Cancelled,FALSE,2024-10-27 12:24:37.765490
+42732,smeg pgf64 4 62cm classic 4 burner ultra low profile gas hob,Fridge Freezers,2622,2942,537,Pending,FALSE,2024-10-23 12:24:37.765490
+26798,bosch sps46iw00g 45cm serie 4 dishwasher in white 9 place settings,Dishwashers,2619,2382,756,Cancelled,FALSE,2024-10-28 12:24:37.765490
+10760,samsung ue49nu7500 49 curved ultra hd certified hdr smart 4k tv,TVs,2614,1683,742,Cancelled,FALSE,2024-10-10 12:24:37.765490
+21963,panasonic lumix fz330 bridge camera black,Digital Cameras,2617,2554,2110,Delivered,TRUE,2024-10-19 12:24:37.765490
+1761,lg k8 2017 smartphone 5 inch display 5mp front camera android 7.0 b,Mobile Phones,2612,1098,2335,Shipped,FALSE,2024-10-09 12:24:37.765490
